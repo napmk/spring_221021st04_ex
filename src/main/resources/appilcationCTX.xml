@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="bmicalculator" class="com.napmkmk.test.BMIcalculator">
+		<property name="lowWeight" value="18.5"></property>
+		<property name="normal" value="23"></property>
+		<property name="overWeight" value="25"></property>
+		<property name="obesity" value="30"></property>
+	</bean>
+	
+	<bean id="myInfo1" class="com.napmkmk.test.MyInfo">
+		<property name="name" value="홍길동"></property>
+		<property name="weight" value="180"></property>
+		<property name="height" value="85"></property>
+		<property name="hobbys">
+			<list>
+				<value>영화감상</value>
+				<value>운동</value>
+				<value>게임</value>
+			</list>
+		</property>
+		<property name="bmicalculator">
+			<ref bean="bmicalculator"/>
+		</property>	
+	</bean>
+	
+	<bean id="myInfo2" class="com.napmkmk.test.MyInfo">
+		<property name="name" value="김유신"></property>
+		<property name="weight" value="175"></property>
+		<property name="height" value="80"></property>
+		<property name="hobbys">
+			<list>
+				<value>음악감상</value>
+				<value>노래하기</value>
+				<value>영화감상</value>
+			</list>
+		</property>
+		<property name="bmicalculator">
+			<ref bean="bmicalculator"/>
+		</property>	
+	</bean>
+	
+
+</beans>
